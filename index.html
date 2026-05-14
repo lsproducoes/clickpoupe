@@ -63,7 +63,7 @@
             line-height: 1.4;
         }
 
-        /* BARRA DE PESQUISA */
+        /* BUSCA */
         .search-container {
             width: 100%;
             max-width: 500px;
@@ -78,15 +78,11 @@
             font-size: 1rem;
             outline: none;
             transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        #searchInput:focus {
-            border-color: var(--primary-orange);
-            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.1);
-        }
+        #searchInput:focus { border-color: var(--primary-orange); }
 
-        /* BOTÃO PULSANTE WHATSAPP */
+        /* BOTÃO WHATSAPP */
         .main-link {
             width: 100%;
             max-width: 500px;
@@ -98,7 +94,6 @@
             text-align: center;
             font-weight: 800;
             font-size: 1.05rem;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
             animation: pulse 2s infinite;
             display: flex;
             align-items: center;
@@ -113,12 +108,12 @@
             100% { transform: scale(1); }
         }
 
-        /* CATEGORIAS EM GRADE (PARA NÃO CORTAR) */
+        /* CATEGORIAS */
         .category-grid {
             width: 100%;
             max-width: 500px;
             display: flex;
-            flex-wrap: wrap; /* Faz os botões pularem de linha */
+            flex-wrap: wrap;
             justify-content: center;
             gap: 8px;
             margin-bottom: 20px;
@@ -127,10 +122,10 @@
         .cat-btn {
             background: white;
             border: 1px solid #ddd;
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -139,6 +134,28 @@
             background: var(--deep-navy);
             color: white;
             border-color: var(--deep-navy);
+        }
+
+        /* SEÇÃO DE VÍDEO */
+        .video-section-title {
+            width: 100%;
+            max-width: 500px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--primary-orange);
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #ddd;
         }
 
         /* LISTA DE PRODUTOS */
@@ -162,32 +179,25 @@
             transition: 0.3s;
         }
 
+        .product-card:hover { border-color: var(--primary-orange); transform: translateY(-2px); }
+
         .product-code {
             background: var(--primary-orange);
             color: white;
             font-weight: 800;
-            font-size: 0.75rem;
-            padding: 5px 10px;
+            font-size: 0.7rem;
+            padding: 5px 8px;
             border-radius: 8px;
             margin-right: 12px;
-            min-width: 55px;
+            min-width: 50px;
             text-align: center;
         }
 
         .product-info { flex: 1; }
+        .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 2px; }
+        .product-price { color: var(--primary-orange); font-weight: 800; font-size: 1rem; }
 
-        .product-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; }
-
-        .product-price { color: var(--primary-orange); font-weight: 800; font-size: 1.05rem; }
-
-        /* MENSAGEM QUANDO NÃO ACHA NADA */
-        #noResults {
-            text-align: center;
-            padding: 20px;
-            display: none;
-            color: #999;
-            font-weight: 600;
-        }
+        #noResults { text-align: center; padding: 20px; display: none; color: #999; }
 
         /* FAQ */
         .faq-section {
@@ -200,38 +210,17 @@
             border: 1px solid #eee;
         }
 
-        .faq-title { font-weight: 800; font-size: 1rem; margin-bottom: 15px; text-align: center; }
-
-        .faq-item { margin-bottom: 15px; }
-
-        .faq-q { font-weight: 700; font-size: 0.85rem; color: var(--primary-orange); margin-bottom: 4px; }
-
-        .faq-a { font-size: 0.8rem; color: var(--text-gray); line-height: 1.4; }
+        .faq-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 15px; text-align: center; }
+        .faq-item { margin-bottom: 12px; }
+        .faq-q { font-weight: 700; font-size: 0.8rem; color: var(--primary-orange); margin-bottom: 2px; }
+        .faq-a { font-size: 0.75rem; color: var(--text-gray); line-height: 1.4; }
 
         /* FOOTER */
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            padding-bottom: 40px;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
-
-        .social-btn {
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--deep-navy);
-            background: #eee;
-            padding: 10px 20px;
-            border-radius: 12px;
-        }
-
-        .disclaimer { font-size: 0.7rem; color: #999; margin-top: 20px; line-height: 1.4; padding: 0 10px; }
-
-        .copy { font-size: 0.75rem; color: #bbb; margin-top: 15px; }
+        footer { margin-top: 40px; text-align: center; padding-bottom: 40px; width: 100%; max-width: 500px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
+        .social-btn { text-decoration: none; font-weight: 700; font-size: 0.8rem; color: var(--deep-navy); background: #eee; padding: 8px 15px; border-radius: 10px; }
+        .disclaimer { font-size: 0.65rem; color: #999; margin-top: 20px; line-height: 1.4; }
+        .copy { font-size: 0.7rem; color: #bbb; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -245,33 +234,57 @@
         <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
     </div>
 
-    <a href="LINK_DO_SEU_CANAL_WHATSAPP" class="main-link">
+    <!-- LINK DO SEU CANAL WHATSAPP (MUDAR AQUI) -->
+    <a href="https://whatsapp.com/channel/SEU_LINK_AQUI" class="main-link">
         🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
     </a>
 
     <div class="category-grid">
         <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
+        <button class="cat-btn" onclick="filterCategory('casa')">Casa & Decor</button>
         <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
-        <button class="cat-btn" onclick="filterCategory('tecnologia')">Tecnologia</button>
-        <button class="cat-btn" onclick="filterCategory('decoracao')">Decoração</button>
-        <button class="cat-btn" onclick="filterCategory('bebe')">Bebê & Kids</button>
-        <button class="cat-btn" onclick="filterCategory('utilidades')">Utilidades</button>
-        <button class="cat-btn" onclick="filterCategory('beleza')">Beleza</button>
-        <button class="cat-btn" onclick="filterCategory('moda')">Moda</button>
+        <button class="cat-btn" onclick="filterCategory('viagem')">Viagem</button>
+        <button class="cat-btn" onclick="filterCategory('banheiro')">Banheiro</button>
+        <button class="cat-btn" onclick="filterCategory('quarto')">Quarto</button>
+        <button class="cat-btn" onclick="filterCategory('homens')">Homens</button>
+        <button class="cat-btn" onclick="filterCategory('mulheres')">Mulheres</button>
+        <button class="cat-btn" onclick="filterCategory('carro')">Carro</button>
+        <button class="cat-btn" onclick="filterCategory('acessorios')">Acessórios</button>
+        <button class="cat-btn" onclick="filterCategory('eletronicos')">Eletrônicos</button>
+        <button class="cat-btn" onclick="filterCategory('planeta')">Gadgets Incríveis</button>
     </div>
 
     <div class="links-container" id="productGrid">
         <div id="noResults">Nenhum achadinho encontrado... 😅</div>
+
+        <!-- COLEÇÃO VÍDEO #001 -->
+        <div class="video-section-title">🎥 Vídeo #001 - Utilidades de Casa</div>
         
-        <!-- COLE SEUS PRODUTOS ABAIXO SEGUINDO ESTE MODELO:
-        <a href="LINK" class="product-card" data-category="CATEGORIA">
+        <a href="https://s.shopee.com.br/1BJBMQMR1k" class="product-card" data-category="casa">
             <div class="product-code">#001</div>
             <div class="product-info">
-                <div class="product-title">NOME DO PRODUTO</div>
-                <div class="product-price">R$ 0,00</div>
+                <div class="product-title">MOP Rodo Limpa Vidros 2 em 1</div>
+                <div class="product-price">R$ 52,15</div>
             </div>
         </a>
-        -->
+
+        <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
+            <div class="product-code">#001</div>
+            <div class="product-info">
+                <div class="product-title">Abajur LED com Sensor Sem Fio (3 Cores)</div>
+                <div class="product-price">R$ 65,07</div>
+            </div>
+        </a>
+
+        <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
+            <div class="product-code">#001</div>
+            <div class="product-info">
+                <div class="product-title">Kit de Potes Herméticos Organizadores</div>
+                <div class="product-price">R$ 36,92</div>
+            </div>
+        </a>
+
+        <!-- FIM DA COLEÇÃO #001 -->
 
     </div>
 
@@ -285,19 +298,15 @@
             <div class="faq-q">Onde encontro o código do vídeo?</div>
             <div class="faq-a">O código (#001, #002...) aparece no vídeo do Shorts ou na legenda. Use a barra de pesquisa acima para achá-lo rapidamente.</div>
         </div>
-        <div class="faq-item">
-            <div class="faq-q">É seguro comprar por aqui?</div>
-            <div class="faq-a">Sim! Todos os links levam diretamente para vendedores verificados dentro da Shopee. Nós apenas selecionamos as melhores ofertas.</div>
-        </div>
     </div>
 
     <footer>
         <div class="social-links">
-            <a href="LINK_YOUTUBE" class="social-btn">YouTube</a>
-            <a href="LINK_WHATSAPP" class="social-btn">WhatsApp</a>
+            <a href="https://youtube.com/@clickpoupe-achadinhos" class="social-btn">YouTube</a>
+            <a href="#" class="social-btn">WhatsApp</a>
         </div>
         <div class="disclaimer">
-            Como afiliado Shopee, posso receber uma pequena comissão por compras qualificadas através deste site, sem qualquer custo adicional para você. Isso ajuda a manter nosso trabalho de curadoria.
+            Como afiliado Shopee, posso receber uma pequena comissão por compras qualificadas, sem custo adicional para você.
         </div>
         <p class="copy">&copy; 2026 ClickPoupe • lsproducoes</p>
     </footer>
@@ -307,7 +316,6 @@
             let filter = this.value.toUpperCase();
             let cards = document.getElementsByClassName('product-card');
             let found = false;
-
             for (let i = 0; i < cards.length; i++) {
                 let title = cards[i].innerText;
                 if (title.toUpperCase().indexOf(filter) > -1) {
@@ -325,7 +333,6 @@
             let btns = document.getElementsByClassName('cat-btn');
             for (let b of btns) { b.classList.remove('active'); }
             event.currentTarget.classList.add('active');
-
             for (let i = 0; i < cards.length; i++) {
                 if (category === 'todos') {
                     cards[i].style.display = "";
