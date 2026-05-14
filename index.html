@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClickPoupe | Melhores Achadinhos Shopee</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-orange: #FF4500;
             --deep-navy: #1A1A2E;
             --gold: #FFD700;
             --white: #FFFFFF;
-            --bg-gray: #F4F4F9;
+            --bg-gray: #F8F9FA;
+            --text-gray: #666;
         }
 
         * {
@@ -19,6 +20,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -28,13 +30,12 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 15px;
         }
 
-        /* Header */
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             width: 100%;
             max-width: 500px;
         }
@@ -42,164 +43,185 @@
         .logo {
             background-color: var(--deep-navy);
             color: var(--white);
-            padding: 15px 25px;
+            padding: 12px 25px;
             border-radius: 50px;
             display: inline-block;
             font-weight: 800;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.4rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             border: 2px solid var(--primary-orange);
             text-transform: uppercase;
         }
 
-        .logo span {
-            color: var(--primary-orange);
-        }
+        .logo span { color: var(--primary-orange); }
 
         .tagline {
             margin-top: 15px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: #555;
+            color: var(--text-gray);
             line-height: 1.4;
         }
 
-        /* Container de Links */
-        .links-container {
+        /* BARRA DE PESQUISA */
+        .search-container {
             width: 100%;
             max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        /* Botão Principal em Destaque */
+        #searchInput {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        #searchInput:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.1);
+        }
+
+        /* BOTÃO PULSANTE WHATSAPP */
         .main-link {
-            background: linear-gradient(135deg, var(--primary-orange), #FF8C00);
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             text-decoration: none;
-            padding: 22px;
+            padding: 18px;
             border-radius: 18px;
             text-align: center;
             font-weight: 800;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.3);
+            font-size: 1.05rem;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
             animation: pulse 2s infinite;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            border: none;
-            cursor: pointer;
+            margin-bottom: 25px;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.04); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
 
-        /* Cards de Produtos */
+        /* CATEGORIAS */
+        .category-scroll {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .category-scroll::-webkit-scrollbar { display: none; }
+
+        .cat-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 18px;
+            border-radius: 50px;
+            white-space: nowrap;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cat-btn.active {
+            background: var(--deep-navy);
+            color: white;
+            border-color: var(--deep-navy);
+        }
+
+        /* LISTA DE PRODUTOS */
+        .links-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
         .product-card {
             background: white;
             border-radius: 18px;
-            overflow: hidden;
             display: flex;
             align-items: center;
             padding: 12px;
             text-decoration: none;
             color: var(--deep-navy);
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            transition: 0.3s;
         }
 
         .product-card:hover {
             border-color: var(--primary-orange);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
         }
 
-        .product-img {
-            width: 85px;
-            height: 85px;
-            background-color: #f0f0f0;
-            border-radius: 12px;
-            margin-right: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-code {
+            background: var(--primary-orange);
+            color: white;
+            font-weight: 800;
             font-size: 0.75rem;
-            color: #aaa;
-            flex-shrink: 0;
-            border: 1px solid #eee;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin-right: 12px;
+            min-width: 55px;
+            text-align: center;
         }
 
-        .product-info {
-            flex: 1;
-        }
+        .product-info { flex: 1; }
 
         .product-title {
             font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 6px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
         }
 
         .product-price {
             color: var(--primary-orange);
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
         }
 
-        /* Botões de Categoria */
-        .category-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 10px;
+        /* SEÇÃO DE DÚVIDAS (FAQ) */
+        .faq-section {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #eee;
         }
 
-        .cat-btn {
-            background: var(--white);
-            border: 2px solid var(--deep-navy);
-            color: var(--deep-navy);
-            padding: 14px;
-            border-radius: 12px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .cat-btn:hover {
-            background: var(--deep-navy);
-            color: white;
-        }
-
-        /* Botão WhatsApp */
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: 15px;
-            text-align: center;
-            text-decoration: none;
+        .faq-title {
             font-weight: 800;
             font-size: 1rem;
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+            margin-bottom: 15px;
+            text-align: center;
         }
 
-        /* Rodapé Social */
+        .faq-item { margin-bottom: 15px; }
+
+        .faq-q { font-weight: 700; font-size: 0.85rem; color: var(--primary-orange); margin-bottom: 4px; }
+
+        .faq-a { font-size: 0.8rem; color: var(--text-gray); line-height: 1.4; }
+
+        /* FOOTER */
         footer {
             margin-top: 50px;
             text-align: center;
@@ -208,87 +230,137 @@
             max-width: 500px;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
 
-        .social-icon {
+        .social-btn {
             text-decoration: none;
-            font-size: 0.9rem;
-            color: var(--deep-navy);
             font-weight: 700;
-            padding: 8px 15px;
-            background: #eef;
-            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--deep-navy);
+            background: #eee;
+            padding: 10px 20px;
+            border-radius: 12px;
         }
 
-        .social-icon:hover {
-            background: var(--primary-orange);
-            color: white;
-        }
+        .disclaimer { font-size: 0.7rem; color: #999; margin-top: 20px; line-height: 1.4; padding: 0 10px; }
 
-        .copy {
-            font-size: 0.75rem;
-            color: #999;
-            margin-top: 10px;
-        }
+        .copy { font-size: 0.75rem; color: #bbb; margin-top: 15px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">CLICK<span>POUPE</span></div>
-        <p class="tagline">Os melhores achadinhos da Shopee selecionados por especialistas. Economize agora!</p>
+        <p class="tagline">Achadinhos da Shopee selecionados com os melhores preços!</p>
     </header>
 
-    <div class="links-container">
-        <!-- LINK DO DIA (HIGHLIGHT) -->
-        <a href="#" class="main-link">
-            🔥 VER ACHADINHO DO VÍDEO!
-        </a>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
+    </div>
 
-        <!-- PRODUTO 1 -->
-        <a href="#" class="product-card">
-            <div class="product-img">FOTO</div>
+    <!-- LINK DO CANAL WHATSAPP -->
+    <a href="LINK_DO_SEU_CANAL_WHATSAPP" class="main-link">
+        🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
+    </a>
+
+    <div class="category-scroll">
+        <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
+        <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
+        <button class="cat-btn" onclick="filterCategory('tecnologia')">Tecnologia</button>
+        <button class="cat-btn" onclick="filterCategory('decoracao')">Decoração</button>
+        <button class="cat-btn" onclick="filterCategory('bebe')">Bebê & Kids</button>
+        <button class="cat-btn" onclick="filterCategory('utilidades')">Utilidades</button>
+    </div>
+
+    <div class="links-container" id="productGrid">
+        
+        <!-- PRODUTO EXEMPLO 1 -->
+        <a href="LINK_SHOPEE" class="product-card" data-category="utilidades">
+            <div class="product-code">#001</div>
             <div class="product-info">
-                <div class="product-title">Mini Processador USB - Facilita sua Cozinha</div>
-                <div class="product-price">R$ 19,90</div>
+                <div class="product-title">Piercing do Corinthians para Chinelo (1 Par)</div>
+                <div class="product-price">R$ 17,99</div>
             </div>
         </a>
 
-        <!-- PRODUTO 2 -->
-        <a href="#" class="product-card">
-            <div class="product-img">FOTO</div>
+        <!-- PRODUTO EXEMPLO 2 -->
+        <a href="LINK_SHOPEE" class="product-card" data-category="tecnologia">
+            <div class="product-code">#002</div>
             <div class="product-info">
-                <div class="product-title">Luminária de Monitor - Mais Conforto Visual</div>
-                <div class="product-price">R$ 47,90</div>
+                <div class="product-title">Porta Figurinhas Copa do Mundo 2026 em 3D</div>
+                <div class="product-price">R$ 29,90</div>
             </div>
         </a>
 
-        <!-- CATEGORIAS -->
-        <div class="category-grid">
-            <a href="#" class="cat-btn">Cozinha</a>
-            <a href="#" class="cat-btn">Tecnologia</a>
-            <a href="#" class="cat-btn">Decoração</a>
-            <a href="#" class="cat-btn">Utilidades</a>
+        <!-- ADICIONE MAIS PRODUTOS AQUI -->
+
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-title">Dúvidas Frequentes 🤔</div>
+        <div class="faq-item">
+            <div class="faq-q">Como faço para comprar?</div>
+            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para o site oficial da Shopee para finalizar a compra com segurança.</div>
         </div>
-
-        <!-- GRUPO DE OFERTAS -->
-        <a href="#" class="whatsapp-btn">
-            📱 Entrar no Grupo VIP (WhatsApp)
-        </a>
+        <div class="faq-item">
+            <div class="faq-q">Onde encontro o código do vídeo?</div>
+            <div class="faq-a">O código (#001, #002...) aparece no vídeo do Shorts ou na legenda. Use a barra de pesquisa acima para achá-lo rapidamente.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">É seguro comprar por aqui?</div>
+            <div class="faq-a">Sim! Todos os links levam diretamente para vendedores verificados dentro da Shopee. Nós apenas selecionamos as melhores ofertas.</div>
+        </div>
     </div>
 
     <footer>
         <div class="social-links">
-            <a href="#" class="social-icon">YouTube</a>
-            <a href="#" class="social-icon">TikTok</a>
+            <a href="LINK_YOUTUBE" class="social-btn">YouTube</a>
+            <a href="LINK_WHATSAPP" class="social-btn">WhatsApp</a>
+        </div>
+        <div class="disclaimer">
+            Como afiliado Shopee, posso receber uma pequena comissão por compras qualificadas através deste site, sem qualquer custo adicional para você. Isso ajuda a manter nosso trabalho de curadoria.
         </div>
         <p class="copy">&copy; 2026 ClickPoupe • lsproducoes</p>
     </footer>
 
+    <script>
+        // FUNÇÃO DE PESQUISA
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toUpperCase();
+            let cards = document.getElementsByClassName('product-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].innerText;
+                if (title.toUpperCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        });
+
+        // FUNÇÃO DE FILTRO POR CATEGORIA
+        function filterCategory(category) {
+            let cards = document.getElementsByClassName('product-card');
+            let btns = document.getElementsByClassName('cat-btn');
+
+            // Atualiza botões
+            for (let b of btns) { b.classList.remove('active'); }
+            event.currentTarget.classList.add('active');
+
+            // Filtra cards
+            for (let i = 0; i < cards.length; i++) {
+                if (category === 'todos') {
+                    cards[i].style.display = "";
+                } else {
+                    if (cards[i].getAttribute('data-category') === category) {
+                        cards[i].style.display = "";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
