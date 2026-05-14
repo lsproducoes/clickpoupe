@@ -55,15 +55,6 @@
 
         .logo span { color: var(--primary-orange); }
 
-        .tagline {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-gray);
-            line-height: 1.4;
-        }
-
-        /* BUSCA */
         .search-container {
             width: 100%;
             max-width: 500px;
@@ -77,12 +68,10 @@
             border: 2px solid #ddd;
             font-size: 1rem;
             outline: none;
-            transition: 0.3s;
         }
 
         #searchInput:focus { border-color: var(--primary-orange); }
 
-        /* BOTÃO WHATSAPP */
         .main-link {
             width: 100%;
             max-width: 500px;
@@ -108,7 +97,6 @@
             100% { transform: scale(1); }
         }
 
-        /* CATEGORIAS */
         .category-grid {
             width: 100%;
             max-width: 500px;
@@ -127,7 +115,6 @@
             font-weight: 600;
             font-size: 0.75rem;
             cursor: pointer;
-            transition: 0.3s;
         }
 
         .cat-btn.active {
@@ -136,36 +123,51 @@
             border-color: var(--deep-navy);
         }
 
-        /* SEÇÃO DE VÍDEO */
-        .video-section-title {
+        /* ESTILO DO ACORDEÃO (ABRIR/FECHAR) */
+        .video-group {
             width: 100%;
             max-width: 500px;
+            margin-bottom: 10px;
+        }
+
+        .video-header {
+            width: 100%;
+            background: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
             font-weight: 800;
             font-size: 0.85rem;
             color: var(--primary-orange);
-            margin: 20px 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            transition: 0.3s;
         }
 
-        .video-section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #ddd;
+        .video-header:hover { background: #fefefe; }
+
+        .video-header .arrow {
+            font-size: 1.2rem;
+            transition: 0.3s;
         }
 
-        /* LISTA DE PRODUTOS */
-        .links-container {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
+        .video-content {
+            display: none; /* Escondido por padrão */
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
+            padding: 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-orange);
+            margin-top: 5px;
         }
+
+        /* Quando estiver aberto */
+        .video-group.active .video-content { display: flex; }
+        .video-group.active .arrow { transform: rotate(180deg); }
+        .video-group.active .video-header { border-color: var(--primary-orange); }
 
         .product-card {
             background: white;
@@ -176,10 +178,7 @@
             text-decoration: none;
             color: var(--deep-navy);
             border: 1px solid #eee;
-            transition: 0.3s;
         }
-
-        .product-card:hover { border-color: var(--primary-orange); transform: translateY(-2px); }
 
         .product-code {
             background: var(--primary-orange);
@@ -199,23 +198,13 @@
 
         #noResults { text-align: center; padding: 20px; display: none; color: #999; }
 
-        /* FAQ */
-        .faq-section {
-            width: 100%;
-            max-width: 500px;
-            margin-top: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-        }
-
+        /* FAQ & FOOTER */
+        .faq-section { width: 100%; max-width: 500px; margin-top: 40px; background: white; padding: 20px; border-radius: 20px; border: 1px solid #eee; }
         .faq-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 15px; text-align: center; }
         .faq-item { margin-bottom: 12px; }
         .faq-q { font-weight: 700; font-size: 0.8rem; color: var(--primary-orange); margin-bottom: 2px; }
         .faq-a { font-size: 0.75rem; color: var(--text-gray); line-height: 1.4; }
 
-        /* FOOTER */
         footer { margin-top: 40px; text-align: center; padding-bottom: 40px; width: 100%; max-width: 500px; }
         .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
         .social-btn { text-decoration: none; font-weight: 700; font-size: 0.8rem; color: var(--deep-navy); background: #eee; padding: 8px 15px; border-radius: 10px; }
@@ -234,7 +223,6 @@
         <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
     </div>
 
-    <!-- LINK DO SEU CANAL WHATSAPP (MUDAR AQUI) -->
     <a href="https://whatsapp.com/channel/SEU_LINK_AQUI" class="main-link">
         🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
     </a>
@@ -257,34 +245,37 @@
     <div class="links-container" id="productGrid">
         <div id="noResults">Nenhum achadinho encontrado... 😅</div>
 
-        <!-- COLEÇÃO VÍDEO #001 -->
-        <div class="video-section-title">🎥 Vídeo #001 - Utilidades de Casa</div>
-        
-        <a href="https://s.shopee.com.br/1BJBMQMR1k" class="product-card" data-category="casa">
-            <div class="product-code">#001</div>
-            <div class="product-info">
-                <div class="product-title">MOP Rodo Limpa Vidros 2 em 1</div>
-                <div class="product-price">R$ 52,15</div>
+        <!-- GRUPO VÍDEO #001 -->
+        <div class="video-group" id="group-001">
+            <div class="video-header" onclick="toggleVideo('group-001')">
+                <span>🎥 Vídeo #001 - Utilidades de Casa</span>
+                <span class="arrow">▾</span>
             </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
-            <div class="product-code">#001</div>
-            <div class="product-info">
-                <div class="product-title">Abajur LED com Sensor Sem Fio (3 Cores)</div>
-                <div class="product-price">R$ 65,07</div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/1BJBMQMR1k" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">MOP Rodo Limpa Vidros 2 em 1</div>
+                        <div class="product-price">R$ 52,15</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Abajur LED com Sensor Sem Fio (3 Cores)</div>
+                        <div class="product-price">R$ 65,07</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit de Potes Herméticos Organizadores</div>
+                        <div class="product-price">R$ 36,92</div>
+                    </div>
+                </a>
             </div>
-        </a>
-
-        <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
-            <div class="product-code">#001</div>
-            <div class="product-info">
-                <div class="product-title">Kit de Potes Herméticos Organizadores</div>
-                <div class="product-price">R$ 36,92</div>
-            </div>
-        </a>
-
-        <!-- FIM DA COLEÇÃO #001 -->
+        </div>
+        <!-- FIM DO GRUPO #001 -->
 
     </div>
 
@@ -292,11 +283,11 @@
         <div class="faq-title">Dúvidas Frequentes 🤔</div>
         <div class="faq-item">
             <div class="faq-q">Como faço para comprar?</div>
-            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para o site oficial da Shopee para finalizar a compra com segurança.</div>
+            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para a Shopee.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">Onde encontro o código do vídeo?</div>
-            <div class="faq-a">O código (#001, #002...) aparece no vídeo do Shorts ou na legenda. Use a barra de pesquisa acima para achá-lo rapidamente.</div>
+            <div class="faq-a">O código (#001...) aparece no vídeo. Use a busca acima para achá-lo.</div>
         </div>
     </div>
 
@@ -305,34 +296,49 @@
             <a href="https://youtube.com/@clickpoupe-achadinhos" class="social-btn">YouTube</a>
             <a href="#" class="social-btn">WhatsApp</a>
         </div>
-        <div class="disclaimer">
-            Como afiliado Shopee, posso receber uma pequena comissão por compras qualificadas, sem custo adicional para você.
-        </div>
+        <p class="disclaimer">Como afiliado Shopee, posso receber comissão por compras qualificadas.</p>
         <p class="copy">&copy; 2026 ClickPoupe • lsproducoes</p>
     </footer>
 
     <script>
+        // FUNÇÃO PARA ABRIR/FECHAR VÍDEO
+        function toggleVideo(id) {
+            document.getElementById(id).classList.toggle('active');
+        }
+
+        // BUSCA
         document.getElementById('searchInput').addEventListener('keyup', function() {
             let filter = this.value.toUpperCase();
             let cards = document.getElementsByClassName('product-card');
+            let groups = document.getElementsByClassName('video-group');
             let found = false;
+
             for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].innerText;
-                if (title.toUpperCase().indexOf(filter) > -1) {
+                let text = cards[i].innerText.toUpperCase();
+                if (text.indexOf(filter) > -1) {
                     cards[i].style.display = "";
                     found = true;
                 } else {
                     cards[i].style.display = "none";
                 }
             }
+            // Se pesquisar código, abre automaticamente o grupo
+            if(filter.startsWith('#')) {
+                for(let g of groups) { g.classList.add('active'); }
+            }
             document.getElementById('noResults').style.display = found || filter === "" ? "none" : "block";
         });
 
+        // FILTRO CATEGORIA
         function filterCategory(category) {
             let cards = document.getElementsByClassName('product-card');
+            let groups = document.getElementsByClassName('video-group');
             let btns = document.getElementsByClassName('cat-btn');
             for (let b of btns) { b.classList.remove('active'); }
             event.currentTarget.classList.add('active');
+
+            for (let g of groups) { g.classList.add('active'); } // Abre para filtrar
+
             for (let i = 0; i < cards.length; i++) {
                 if (category === 'todos') {
                     cards[i].style.display = "";
