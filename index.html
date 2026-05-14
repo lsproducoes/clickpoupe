@@ -113,28 +113,24 @@
             100% { transform: scale(1); }
         }
 
-        /* CATEGORIAS */
-        .category-scroll {
+        /* CATEGORIAS EM GRADE (PARA NÃO CORTAR) */
+        .category-grid {
             width: 100%;
             max-width: 500px;
             display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 15px;
-            margin-bottom: 10px;
-            scrollbar-width: none;
+            flex-wrap: wrap; /* Faz os botões pularem de linha */
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
         }
-
-        .category-scroll::-webkit-scrollbar { display: none; }
 
         .cat-btn {
             background: white;
             border: 1px solid #ddd;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border-radius: 50px;
-            white-space: nowrap;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -166,11 +162,6 @@
             transition: 0.3s;
         }
 
-        .product-card:hover {
-            border-color: var(--primary-orange);
-            transform: translateY(-2px);
-        }
-
         .product-code {
             background: var(--primary-orange);
             color: white;
@@ -185,19 +176,20 @@
 
         .product-info { flex: 1; }
 
-        .product-title {
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 3px;
+        .product-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; }
+
+        .product-price { color: var(--primary-orange); font-weight: 800; font-size: 1.05rem; }
+
+        /* MENSAGEM QUANDO NÃO ACHA NADA */
+        #noResults {
+            text-align: center;
+            padding: 20px;
+            display: none;
+            color: #999;
+            font-weight: 600;
         }
 
-        .product-price {
-            color: var(--primary-orange);
-            font-weight: 800;
-            font-size: 1.05rem;
-        }
-
-        /* SEÇÃO DE DÚVIDAS (FAQ) */
+        /* FAQ */
         .faq-section {
             width: 100%;
             max-width: 500px;
@@ -208,12 +200,7 @@
             border: 1px solid #eee;
         }
 
-        .faq-title {
-            font-weight: 800;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+        .faq-title { font-weight: 800; font-size: 1rem; margin-bottom: 15px; text-align: center; }
 
         .faq-item { margin-bottom: 15px; }
 
@@ -258,41 +245,33 @@
         <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
     </div>
 
-    <!-- LINK DO CANAL WHATSAPP -->
     <a href="LINK_DO_SEU_CANAL_WHATSAPP" class="main-link">
         🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
     </a>
 
-    <div class="category-scroll">
+    <div class="category-grid">
         <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
         <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
         <button class="cat-btn" onclick="filterCategory('tecnologia')">Tecnologia</button>
         <button class="cat-btn" onclick="filterCategory('decoracao')">Decoração</button>
         <button class="cat-btn" onclick="filterCategory('bebe')">Bebê & Kids</button>
         <button class="cat-btn" onclick="filterCategory('utilidades')">Utilidades</button>
+        <button class="cat-btn" onclick="filterCategory('beleza')">Beleza</button>
+        <button class="cat-btn" onclick="filterCategory('moda')">Moda</button>
     </div>
 
     <div class="links-container" id="productGrid">
+        <div id="noResults">Nenhum achadinho encontrado... 😅</div>
         
-        <!-- PRODUTO EXEMPLO 1 -->
-        <a href="LINK_SHOPEE" class="product-card" data-category="utilidades">
+        <!-- COLE SEUS PRODUTOS ABAIXO SEGUINDO ESTE MODELO:
+        <a href="LINK" class="product-card" data-category="CATEGORIA">
             <div class="product-code">#001</div>
             <div class="product-info">
-                <div class="product-title">Piercing do Corinthians para Chinelo (1 Par)</div>
-                <div class="product-price">R$ 17,99</div>
+                <div class="product-title">NOME DO PRODUTO</div>
+                <div class="product-price">R$ 0,00</div>
             </div>
         </a>
-
-        <!-- PRODUTO EXEMPLO 2 -->
-        <a href="LINK_SHOPEE" class="product-card" data-category="tecnologia">
-            <div class="product-code">#002</div>
-            <div class="product-info">
-                <div class="product-title">Porta Figurinhas Copa do Mundo 2026 em 3D</div>
-                <div class="product-price">R$ 29,90</div>
-            </div>
-        </a>
-
-        <!-- ADICIONE MAIS PRODUTOS AQUI -->
+        -->
 
     </div>
 
@@ -324,40 +303,34 @@
     </footer>
 
     <script>
-        // FUNÇÃO DE PESQUISA
         document.getElementById('searchInput').addEventListener('keyup', function() {
             let filter = this.value.toUpperCase();
             let cards = document.getElementsByClassName('product-card');
+            let found = false;
 
             for (let i = 0; i < cards.length; i++) {
                 let title = cards[i].innerText;
                 if (title.toUpperCase().indexOf(filter) > -1) {
                     cards[i].style.display = "";
+                    found = true;
                 } else {
                     cards[i].style.display = "none";
                 }
             }
+            document.getElementById('noResults').style.display = found || filter === "" ? "none" : "block";
         });
 
-        // FUNÇÃO DE FILTRO POR CATEGORIA
         function filterCategory(category) {
             let cards = document.getElementsByClassName('product-card');
             let btns = document.getElementsByClassName('cat-btn');
-
-            // Atualiza botões
             for (let b of btns) { b.classList.remove('active'); }
             event.currentTarget.classList.add('active');
 
-            // Filtra cards
             for (let i = 0; i < cards.length; i++) {
                 if (category === 'todos') {
                     cards[i].style.display = "";
                 } else {
-                    if (cards[i].getAttribute('data-category') === category) {
-                        cards[i].style.display = "";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
+                    cards[i].style.display = cards[i].getAttribute('data-category') === category ? "" : "none";
                 }
             }
         }
