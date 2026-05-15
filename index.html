@@ -51,9 +51,17 @@
         .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; line-height: 1.2; }
         .check-price { color: var(--primary-orange); font-weight: 800; font-size: 0.8rem; background: rgba(255, 69, 0, 0.1); padding: 5px 10px; border-radius: 8px; display: inline-block; text-transform: uppercase; }
 
+        .faq-section { width: 100%; max-width: 500px; margin-top: 40px; background: white; padding: 20px; border-radius: 20px; border: 1px solid #eee; }
+        .faq-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 15px; text-align: center; }
+        .faq-item { margin-bottom: 12px; }
+        .faq-q { font-weight: 700; font-size: 0.8rem; color: var(--primary-orange); margin-bottom: 2px; }
+        .faq-a { font-size: 0.75rem; color: var(--text-gray); line-height: 1.4; }
+
         footer { margin-top: 40px; text-align: center; padding-bottom: 40px; width: 100%; max-width: 500px; }
         .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
         .social-btn { text-decoration: none; font-weight: 700; font-size: 0.8rem; color: var(--deep-navy); background: #eee; padding: 8px 15px; border-radius: 10px; }
+        .disclaimer { font-size: 0.65rem; color: #999; margin-top: 20px; line-height: 1.4; }
+        .copy { font-size: 0.7rem; color: #bbb; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -77,12 +85,13 @@
         <button class="cat-btn" onclick="filterCategory('eletronicos')">Eletrônicos</button>
         <button class="cat-btn" onclick="filterCategory('antistress')">Anti-Stress</button>
         <button class="cat-btn" onclick="filterCategory('geek')">Universo Geek</button>
+        <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
     </div>
 
     <div class="links-container" id="productGrid">
         <div id="noResults">Nenhum achadinho encontrado... 😅</div>
 
-        <!-- GRUPO VÍDEO #004 - ESPECIAL HARRY POTTER (COLEÇÃO COMPLETA) -->
+        <!-- GRUPO VÍDEO #004 - ESPECIAL HARRY POTTER -->
         <div class="video-group" id="group-004">
             <div class="video-header" onclick="toggleVideo('group-004')">
                 <span>🪄 Vídeo #004 - Coleção Oficial Harry Potter</span>
@@ -99,7 +108,7 @@
                 <a href="https://s.shopee.com.br/BQfwGXcd4" class="product-card" data-category="geek">
                     <div class="product-code">#004</div>
                     <div class="product-info">
-                        <div class="product-title">Caneta Varinha Universal Ultra-Sensível (Preta)</div>
+                        <div class="product-title">Caneta Varinha Universal Ultra-Sensível</div>
                         <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
@@ -117,12 +126,10 @@
                         <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
-
-                <!-- KITS DE CARREGAMENTO (CASAS) -->
                 <a href="https://s.shopee.com.br/8ASxSNEsjB" class="product-card" data-category="geek">
                     <div class="product-code">#004</div>
                     <div class="product-info">
-                        <div class="product-title">Kit Carregamento Turbo com Estojo (Hogwarts)</div>
+                        <div class="product-title">Kit Carregamento Turbo Estojo (Hogwarts)</div>
                         <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
@@ -154,8 +161,6 @@
                         <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
-
-                <!-- CABOS (CASAS) -->
                 <a href="https://s.shopee.com.br/1Vw3X5kGxB" class="product-card" data-category="geek">
                     <div class="product-code">#004</div>
                     <div class="product-info">
@@ -194,7 +199,7 @@
             </div>
         </div>
 
-        <!-- GRUPO VÍDEO #003 -->
+        <!-- GRUPO VÍDEO #003 - ESPECIAL ANTI-STRESS -->
         <div class="video-group" id="group-003">
             <div class="video-header" onclick="toggleVideo('group-003')">
                 <span>🧘 Vídeo #003 - Alívio de Ansiedade</span>
@@ -208,10 +213,135 @@
                         <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
+                <a href="https://s.shopee.com.br/5L8ljRo4JZ" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Estrelas Anti-Stress Impressão 3D (Kit 10)</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/5L8lkcpzt1" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Chaveiro Clicker Ervilha com Switch</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1Lcd0TErU1" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Capivara Squishy Estica (Divertida)</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GRUPO VÍDEO #002 - GADGETS INCRÍVEIS -->
+        <div class="video-group" id="group-002">
+            <div class="video-header" onclick="toggleVideo('group-002')">
+                <span>🚀 Vídeo #002 - Gadgets Incríveis</span>
+                <span class="arrow">▾</span>
+            </div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/5flblWALxZ" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Projetor Astronauta Galáxia LED</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1qYtD9hjCI" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit Teclado e Mouse Bluetooth Ultra Fino</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/809WZdiRA1" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Impressora Térmica Bluetooth</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/Lk5SQBjx5" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Umidificador Difusor Nuvem e Chuva</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/7KtpoYw0ap" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Luminária G-Speaker (3 em 1)</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1BJCTOOFE2" class="product-card" data-category="cozinha">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Máquina Seladora Portátil USB</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GRUPO VÍDEO #001 - CASA -->
+        <div class="video-group" id="group-001">
+            <div class="video-header" onclick="toggleVideo('group-001')">
+                <span>🏠 Vídeo #001 - Utilidades de Casa</span>
+                <span class="arrow">▾</span>
+            </div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/4LGDFDhHPH" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Mop Giratório 360º com Balde Inox</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Abajur Mesa com Sensor Touch</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit de Potes Herméticos Organizadores</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
             </div>
         </div>
 
     </div>
+
+    <div class="faq-section">
+        <div class="faq-title">Dúvidas Frequentes 🤔</div>
+        <div class="faq-item">
+            <div class="faq-q">Como faço para comprar?</div>
+            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para o site oficial da Shopee.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Por que não tem preço no site?</div>
+            <div class="faq-a">Os preços da Shopee mudam diariamente. Clique no botão para ver o valor atualizado e os cupons do dia!</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://youtube.com/@clickpoupe-achadinhos" class="social-btn">YouTube</a>
+            <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="social-btn">WhatsApp</a>
+        </div>
+        <p class="disclaimer">Como afiliado Shopee, posso receber comissão por compras qualificadas.</p>
+        <p class="copy">&copy; 2026 ClickPoupe • lsproducoes</p>
+    </footer>
 
     <script>
         function toggleVideo(id) { document.getElementById(id).classList.toggle('active'); }
