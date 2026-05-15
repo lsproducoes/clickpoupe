@@ -35,7 +35,6 @@
         .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 12px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; }
         .cat-btn.active { background: var(--deep-navy); color: white; border-color: var(--deep-navy); }
 
-        /* ESTILO DO ACORDEÃO */
         .video-group { width: 100%; max-width: 500px; margin-bottom: 15px; }
         .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; transition: 0.3s; }
         .video-header:hover { border-color: var(--primary-orange); }
@@ -45,7 +44,9 @@
         .video-group.active .video-content { display: flex; }
         .video-group.active .arrow { transform: rotate(180deg); }
 
-        .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; }
+        .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; transition: 0.2s; }
+        .product-card:hover { border-color: var(--primary-orange); }
+
         .product-code { background: var(--primary-orange); color: white; font-weight: 800; font-size: 0.7rem; padding: 5px 8px; border-radius: 8px; margin-right: 12px; min-width: 50px; text-align: center; }
         .product-info { flex: 1; }
         .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 2px; }
@@ -74,10 +75,9 @@
     </header>
 
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
+        <input type="text" id="searchInput" placeholder="Busque por nome ou código (#003)...">
     </div>
 
-    <!-- COLOQUE SEU LINK DO WHATSAPP AQUI -->
     <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="main-link">
         🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
     </a>
@@ -85,15 +85,53 @@
     <div class="category-grid">
         <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
         <button class="cat-btn" onclick="filterCategory('casa')">Casa</button>
-        <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
         <button class="cat-btn" onclick="filterCategory('eletronicos')">Eletrônicos</button>
-        <button class="cat-btn" onclick="filterCategory('planeta')">Gadgets</button>
+        <button class="cat-btn" onclick="filterCategory('antistress')">Anti-Stress</button>
+        <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
     </div>
 
     <div class="links-container" id="productGrid">
         <div id="noResults">Nenhum achadinho encontrado... 😅</div>
 
-        <!-- GRUPO VÍDEO #002 - GADGETS INCRÍVEIS -->
+        <!-- GRUPO VÍDEO #003 - ESPECIAL ANTI-STRESS -->
+        <div class="video-group" id="group-003">
+            <div class="video-header" onclick="toggleVideo('group-003')">
+                <span>🧘 Vídeo #003 - Alívio de Ansiedade</span>
+                <span class="arrow">▾</span>
+            </div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/1qYtWzltGl" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit 3 Pop It Eletrônico Gamer</div>
+                        <div class="product-price">R$ 26,59</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/5L8ljRo4JZ" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Estrelas Anti-Stress Impressão 3D (Kit 10)</div>
+                        <div class="product-price">R$ 18,41</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/5L8lkcpzt1" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Chaveiro Clicker Ervilha com Switch</div>
+                        <div class="product-price">R$ 25,55</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1Lcd0TErU1" class="product-card" data-category="antistress">
+                    <div class="product-code">#003</div>
+                    <div class="product-info">
+                        <div class="product-title">Capivara Squishy Estica (Divertida)</div>
+                        <div class="product-price">R$ 13,61</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GRUPO VÍDEO #002 -->
         <div class="video-group" id="group-002">
             <div class="video-header" onclick="toggleVideo('group-002')">
                 <span>🚀 Vídeo #002 - Gadgets Incríveis</span>
@@ -104,48 +142,14 @@
                     <div class="product-code">#002</div>
                     <div class="product-info">
                         <div class="product-title">Projetor Astronauta Galáxia LED</div>
-                        <div class="product-price">R$ 37,99</div>
+                        <div class="product-price">R$ 54,90</div>
                     </div>
                 </a>
-                <a href="https://s.shopee.com.br/1qYtD9hjCI" class="product-card" data-category="eletronicos">
-                    <div class="product-code">#002</div>
-                    <div class="product-info">
-                        <div class="product-title">Kit Teclado e Mouse Bluetooth Ultra Fino</div>
-                        <div class="product-price">R$ 37,88</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/809WZdiRA1" class="product-card" data-category="eletronicos">
-                    <div class="product-code">#002</div>
-                    <div class="product-info">
-                        <div class="product-title">Mini Impressora Térmica Bluetooth</div>
-                        <div class="product-price">R$ 47,48</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/Lk5SQBjx5" class="product-card" data-category="planeta">
-                    <div class="product-code">#002</div>
-                    <div class="product-info">
-                        <div class="product-title">Umidificador Difusor Nuvem e Chuva</div>
-                        <div class="product-price">R$ 116,01</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/7KtpoYw0ap" class="product-card" data-category="eletronicos">
-                    <div class="product-code">#002</div>
-                    <div class="product-info">
-                        <div class="product-title">Luminária G-Speaker (3 em 1)</div>
-                        <div class="product-price">R$ 48,88</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/1BJCTOOFE2" class="product-card" data-category="cozinha">
-                    <div class="product-code">#002</div>
-                    <div class="product-info">
-                        <div class="product-title">Mini Máquina Seladora Portátil USB</div>
-                        <div class="product-price">R$ 19,76</div>
-                    </div>
-                </a>
+                <!-- OUTROS PRODUTOS DO 002 AQUI... -->
             </div>
         </div>
 
-        <!-- GRUPO VÍDEO #001 - CASA -->
+        <!-- GRUPO VÍDEO #001 -->
         <div class="video-group" id="group-001">
             <div class="video-header" onclick="toggleVideo('group-001')">
                 <span>🏠 Vídeo #001 - Utilidades de Casa</span>
@@ -157,20 +161,6 @@
                     <div class="product-info">
                         <div class="product-title">Mop Giratório 360º com Balde Inox</div>
                         <div class="product-price">R$ 71,25</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
-                    <div class="product-code">#001</div>
-                    <div class="product-info">
-                        <div class="product-title">Abajur Mesa com Sensor Touch</div>
-                        <div class="product-price">R$ 65,07</div>
-                    </div>
-                </a>
-                <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
-                    <div class="product-code">#001</div>
-                    <div class="product-info">
-                        <div class="product-title">Kit de Potes Herméticos Organizadores</div>
-                        <div class="product-price">R$ 36,92</div>
                     </div>
                 </a>
             </div>
