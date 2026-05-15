@@ -15,190 +15,44 @@
             --text-gray: #666;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; -webkit-tap-highlight-color: transparent; }
 
-        body {
-            background-color: var(--bg-gray);
-            color: var(--deep-navy);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px 15px;
-        }
+        body { background-color: var(--bg-gray); color: var(--deep-navy); display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px 15px; }
 
-        header {
-            text-align: center;
-            margin-bottom: 25px;
-            width: 100%;
-            max-width: 500px;
-        }
+        header { text-align: center; margin-bottom: 25px; width: 100%; max-width: 500px; }
 
-        .logo {
-            background-color: var(--deep-navy);
-            color: var(--white);
-            padding: 12px 25px;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: 800;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            border: 2px solid var(--primary-orange);
-            text-transform: uppercase;
-        }
-
+        .logo { background-color: var(--deep-navy); color: var(--white); padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: 800; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid var(--primary-orange); text-transform: uppercase; }
         .logo span { color: var(--primary-orange); }
 
-        .search-container {
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 20px;
-        }
-
-        #searchInput {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 15px;
-            border: 2px solid #ddd;
-            font-size: 1rem;
-            outline: none;
-        }
-
+        .search-container { width: 100%; max-width: 500px; margin-bottom: 20px; }
+        #searchInput { width: 100%; padding: 15px 20px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; outline: none; }
         #searchInput:focus { border-color: var(--primary-orange); }
 
-        .main-link {
-            width: 100%;
-            max-width: 500px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            text-decoration: none;
-            padding: 18px;
-            border-radius: 18px;
-            text-align: center;
-            font-weight: 800;
-            font-size: 1.05rem;
-            animation: pulse 2s infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
+        .main-link { width: 100%; max-width: 500px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 800; font-size: 1.05rem; animation: pulse 2s infinite; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+        .category-grid { width: 100%; max-width: 500px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+        .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 12px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; }
+        .cat-btn.active { background: var(--deep-navy); color: white; border-color: var(--deep-navy); }
 
-        .category-grid {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
+        /* ESTILO DO ACORDEÃO */
+        .video-group { width: 100%; max-width: 500px; margin-bottom: 15px; }
+        .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; transition: 0.3s; }
+        .video-header:hover { border-color: var(--primary-orange); }
+        .video-header .arrow { font-size: 1.2rem; transition: 0.3s; }
+        .video-content { display: none; flex-direction: column; gap: 10px; padding: 10px 0; padding-left: 10px; border-left: 3px solid var(--primary-orange); margin-top: 5px; }
 
-        .cat-btn {
-            background: white;
-            border: 1px solid #ddd;
-            padding: 8px 12px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            cursor: pointer;
-        }
-
-        .cat-btn.active {
-            background: var(--deep-navy);
-            color: white;
-            border-color: var(--deep-navy);
-        }
-
-        /* ESTILO DO ACORDEÃO (ABRIR/FECHAR) */
-        .video-group {
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 10px;
-        }
-
-        .video-header {
-            width: 100%;
-            background: white;
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 800;
-            font-size: 0.85rem;
-            color: var(--primary-orange);
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .video-header:hover { background: #fefefe; }
-
-        .video-header .arrow {
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .video-content {
-            display: none; /* Escondido por padrão */
-            flex-direction: column;
-            gap: 10px;
-            padding: 10px 0;
-            padding-left: 10px;
-            border-left: 3px solid var(--primary-orange);
-            margin-top: 5px;
-        }
-
-        /* Quando estiver aberto */
         .video-group.active .video-content { display: flex; }
         .video-group.active .arrow { transform: rotate(180deg); }
-        .video-group.active .video-header { border-color: var(--primary-orange); }
 
-        .product-card {
-            background: white;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            text-decoration: none;
-            color: var(--deep-navy);
-            border: 1px solid #eee;
-        }
-
-        .product-code {
-            background: var(--primary-orange);
-            color: white;
-            font-weight: 800;
-            font-size: 0.7rem;
-            padding: 5px 8px;
-            border-radius: 8px;
-            margin-right: 12px;
-            min-width: 50px;
-            text-align: center;
-        }
-
+        .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; }
+        .product-code { background: var(--primary-orange); color: white; font-weight: 800; font-size: 0.7rem; padding: 5px 8px; border-radius: 8px; margin-right: 12px; min-width: 50px; text-align: center; }
         .product-info { flex: 1; }
         .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 2px; }
         .product-price { color: var(--primary-orange); font-weight: 800; font-size: 1rem; }
 
         #noResults { text-align: center; padding: 20px; display: none; color: #999; }
 
-        /* FAQ & FOOTER */
         .faq-section { width: 100%; max-width: 500px; margin-top: 40px; background: white; padding: 20px; border-radius: 20px; border: 1px solid #eee; }
         .faq-title { font-weight: 800; font-size: 0.9rem; margin-bottom: 15px; text-align: center; }
         .faq-item { margin-bottom: 12px; }
@@ -223,46 +77,92 @@
         <input type="text" id="searchInput" placeholder="Busque por nome ou código (#001)...">
     </div>
 
+    <!-- COLOQUE SEU LINK DO WHATSAPP AQUI -->
     <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="main-link">
         🚀 ENTRAR NO CANAL DE OFERTAS (VIP)
     </a>
 
     <div class="category-grid">
         <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
-        <button class="cat-btn" onclick="filterCategory('casa')">Casa & Decor</button>
+        <button class="cat-btn" onclick="filterCategory('casa')">Casa</button>
         <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
-        <button class="cat-btn" onclick="filterCategory('viagem')">Viagem</button>
-        <button class="cat-btn" onclick="filterCategory('banheiro')">Banheiro</button>
-        <button class="cat-btn" onclick="filterCategory('quarto')">Quarto</button>
-        <button class="cat-btn" onclick="filterCategory('homens')">Homens</button>
-        <button class="cat-btn" onclick="filterCategory('mulheres')">Mulheres</button>
-        <button class="cat-btn" onclick="filterCategory('carro')">Carro</button>
-        <button class="cat-btn" onclick="filterCategory('acessorios')">Acessórios</button>
         <button class="cat-btn" onclick="filterCategory('eletronicos')">Eletrônicos</button>
-        <button class="cat-btn" onclick="filterCategory('planeta')">Gadgets Incríveis</button>
+        <button class="cat-btn" onclick="filterCategory('planeta')">Gadgets</button>
     </div>
 
     <div class="links-container" id="productGrid">
         <div id="noResults">Nenhum achadinho encontrado... 😅</div>
 
-        <!-- GRUPO VÍDEO #001 -->
+        <!-- GRUPO VÍDEO #002 - GADGETS INCRÍVEIS -->
+        <div class="video-group" id="group-002">
+            <div class="video-header" onclick="toggleVideo('group-002')">
+                <span>🚀 Vídeo #002 - Gadgets Incríveis</span>
+                <span class="arrow">▾</span>
+            </div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/5flblWALxZ" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Projetor Astronauta Galáxia LED</div>
+                        <div class="product-price">R$ 37,99</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1qYtD9hjCI" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit Teclado e Mouse Bluetooth Ultra Fino</div>
+                        <div class="product-price">R$ 37,88</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/809WZdiRA1" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Impressora Térmica Bluetooth</div>
+                        <div class="product-price">R$ 47,48</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/Lk5SQBjx5" class="product-card" data-category="planeta">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Umidificador Difusor Nuvem e Chuva</div>
+                        <div class="product-price">R$ 116,01</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/7KtpoYw0ap" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Luminária G-Speaker (3 em 1)</div>
+                        <div class="product-price">R$ 48,88</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1BJCTOOFE2" class="product-card" data-category="cozinha">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Máquina Seladora Portátil USB</div>
+                        <div class="product-price">R$ 19,76</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GRUPO VÍDEO #001 - CASA -->
         <div class="video-group" id="group-001">
             <div class="video-header" onclick="toggleVideo('group-001')">
-                <span>🎥 Vídeo #001 - Utilidades de Casa</span>
+                <span>🏠 Vídeo #001 - Utilidades de Casa</span>
                 <span class="arrow">▾</span>
             </div>
             <div class="video-content">
                 <a href="https://s.shopee.com.br/4LGDFDhHPH" class="product-card" data-category="casa">
                     <div class="product-code">#001</div>
                     <div class="product-info">
-                        <div class="product-title">Mop Giratório Cesto Inox 16L Beltempo</div>
+                        <div class="product-title">Mop Giratório 360º com Balde Inox</div>
                         <div class="product-price">R$ 71,25</div>
                     </div>
                 </a>
                 <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
                     <div class="product-code">#001</div>
                     <div class="product-info">
-                        <div class="product-title">Abajur LED com Sensor Sem Fio (3 Cores)</div>
+                        <div class="product-title">Abajur Mesa com Sensor Touch</div>
                         <div class="product-price">R$ 65,07</div>
                     </div>
                 </a>
@@ -275,7 +175,6 @@
                 </a>
             </div>
         </div>
-        <!-- FIM DO GRUPO #001 -->
 
     </div>
 
@@ -283,17 +182,17 @@
         <div class="faq-title">Dúvidas Frequentes 🤔</div>
         <div class="faq-item">
             <div class="faq-q">Como faço para comprar?</div>
-            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para a Shopee.</div>
+            <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para o site oficial da Shopee.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">Onde encontro o código do vídeo?</div>
-            <div class="faq-a">O código (#001...) aparece no vídeo. Use a busca acima para achá-lo.</div>
+            <div class="faq-a">O código (#001, #002...) aparece no vídeo do Shorts. Use a barra de pesquisa acima.</div>
         </div>
     </div>
 
     <footer>
         <div class="social-links">
-            <a href="https://youtube.com/@clickpoupe" class="social-btn">YouTube</a>
+            <a href="https://youtube.com/@clickpoupe-achadinhos" class="social-btn">YouTube</a>
             <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="social-btn">WhatsApp</a>
         </div>
         <p class="disclaimer">Como afiliado Shopee, posso receber comissão por compras qualificadas.</p>
@@ -301,12 +200,8 @@
     </footer>
 
     <script>
-        // FUNÇÃO PARA ABRIR/FECHAR VÍDEO
-        function toggleVideo(id) {
-            document.getElementById(id).classList.toggle('active');
-        }
+        function toggleVideo(id) { document.getElementById(id).classList.toggle('active'); }
 
-        // BUSCA
         document.getElementById('searchInput').addEventListener('keyup', function() {
             let filter = this.value.toUpperCase();
             let cards = document.getElementsByClassName('product-card');
@@ -322,29 +217,22 @@
                     cards[i].style.display = "none";
                 }
             }
-            // Se pesquisar código, abre automaticamente o grupo
             if(filter.startsWith('#')) {
                 for(let g of groups) { g.classList.add('active'); }
             }
             document.getElementById('noResults').style.display = found || filter === "" ? "none" : "block";
         });
 
-        // FILTRO CATEGORIA
         function filterCategory(category) {
             let cards = document.getElementsByClassName('product-card');
             let groups = document.getElementsByClassName('video-group');
             let btns = document.getElementsByClassName('cat-btn');
             for (let b of btns) { b.classList.remove('active'); }
             event.currentTarget.classList.add('active');
-
-            for (let g of groups) { g.classList.add('active'); } // Abre para filtrar
-
+            for (let g of groups) { g.classList.add('active'); }
             for (let i = 0; i < cards.length; i++) {
-                if (category === 'todos') {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = cards[i].getAttribute('data-category') === category ? "" : "none";
-                }
+                if (category === 'todos') { cards[i].style.display = ""; }
+                else { cards[i].style.display = cards[i].getAttribute('data-category') === category ? "" : "none"; }
             }
         }
     </script>
