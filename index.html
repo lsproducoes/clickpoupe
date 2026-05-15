@@ -25,32 +25,33 @@
         .logo span { color: var(--primary-orange); }
 
         .search-container { width: 100%; max-width: 500px; margin-bottom: 20px; }
-        #searchInput { width: 100%; padding: 15px 20px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; outline: none; }
+        #searchInput { width: 100%; padding: 15px 20px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; outline: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         #searchInput:focus { border-color: var(--primary-orange); }
 
         .main-link { width: 100%; max-width: 500px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 800; font-size: 1.05rem; animation: pulse 2s infinite; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
 
         .category-grid { width: 100%; max-width: 500px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
-        .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 12px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; }
+        .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 12px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
         .cat-btn.active { background: var(--deep-navy); color: white; border-color: var(--deep-navy); }
 
         .video-group { width: 100%; max-width: 500px; margin-bottom: 15px; }
-        .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; transition: 0.3s; }
-        .video-header:hover { border-color: var(--primary-orange); }
+        .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
         .video-header .arrow { font-size: 1.2rem; transition: 0.3s; }
         .video-content { display: none; flex-direction: column; gap: 10px; padding: 10px 0; padding-left: 10px; border-left: 3px solid var(--primary-orange); margin-top: 5px; }
 
         .video-group.active .video-content { display: flex; }
         .video-group.active .arrow { transform: rotate(180deg); }
 
-        .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; transition: 0.2s; }
-        .product-card:hover { border-color: var(--primary-orange); }
+        .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; transition: 0.2s; box-shadow: 0 3px 10px rgba(0,0,0,0.02); }
+        .product-card:hover { border-color: var(--primary-orange); transform: translateY(-2px); }
 
         .product-code { background: var(--primary-orange); color: white; font-weight: 800; font-size: 0.7rem; padding: 5px 8px; border-radius: 8px; margin-right: 12px; min-width: 50px; text-align: center; }
         .product-info { flex: 1; }
-        .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 2px; }
-        .product-price { color: var(--primary-orange); font-weight: 800; font-size: 1rem; }
+        .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; line-height: 1.2; }
+        
+        /* NOVO ESTILO DO BOTÃO DE PREÇO */
+        .check-price { color: var(--primary-orange); font-weight: 800; font-size: 0.8rem; background: rgba(255, 69, 0, 0.1); padding: 5px 10px; border-radius: 8px; display: inline-block; text-transform: uppercase; }
 
         #noResults { text-align: center; padding: 20px; display: none; color: #999; }
 
@@ -104,34 +105,34 @@
                     <div class="product-code">#003</div>
                     <div class="product-info">
                         <div class="product-title">Kit 3 Pop It Eletrônico Gamer</div>
-                        <div class="product-price">R$ 26,59</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
                 <a href="https://s.shopee.com.br/5L8ljRo4JZ" class="product-card" data-category="antistress">
                     <div class="product-code">#003</div>
                     <div class="product-info">
                         <div class="product-title">Estrelas Anti-Stress Impressão 3D (Kit 10)</div>
-                        <div class="product-price">R$ 20,01</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
                 <a href="https://s.shopee.com.br/5L8lkcpzt1" class="product-card" data-category="antistress">
                     <div class="product-code">#003</div>
                     <div class="product-info">
                         <div class="product-title">Chaveiro Clicker Ervilha com Switch</div>
-                        <div class="product-price">R$ 25,55</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
                 <a href="https://s.shopee.com.br/1Lcd0TErU1" class="product-card" data-category="antistress">
                     <div class="product-code">#003</div>
                     <div class="product-info">
                         <div class="product-title">Capivara Squishy Estica (Divertida)</div>
-                        <div class="product-price">R$ 27,44</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
             </div>
         </div>
 
-        <!-- GRUPO VÍDEO #002 -->
+        <!-- GRUPO VÍDEO #002 - GADGETS INCRÍVEIS -->
         <div class="video-group" id="group-002">
             <div class="video-header" onclick="toggleVideo('group-002')">
                 <span>🚀 Vídeo #002 - Gadgets Incríveis</span>
@@ -142,14 +143,48 @@
                     <div class="product-code">#002</div>
                     <div class="product-info">
                         <div class="product-title">Projetor Astronauta Galáxia LED</div>
-                        <div class="product-price">R$ 54,90</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
-                <!-- OUTROS PRODUTOS DO 002 AQUI... -->
+                <a href="https://s.shopee.com.br/1qYtD9hjCI" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit Teclado e Mouse Bluetooth Ultra Fino</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/809WZdiRA1" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Impressora Térmica Bluetooth</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/Lk5SQBjx5" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Umidificador Difusor Nuvem e Chuva</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/7KtpoYw0ap" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Luminária G-Speaker (3 em 1)</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/1BJCTOOFE2" class="product-card" data-category="cozinha">
+                    <div class="product-code">#002</div>
+                    <div class="product-info">
+                        <div class="product-title">Mini Máquina Seladora Portátil USB</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <!-- GRUPO VÍDEO #001 -->
+        <!-- GRUPO VÍDEO #001 - CASA -->
         <div class="video-group" id="group-001">
             <div class="video-header" onclick="toggleVideo('group-001')">
                 <span>🏠 Vídeo #001 - Utilidades de Casa</span>
@@ -160,7 +195,21 @@
                     <div class="product-code">#001</div>
                     <div class="product-info">
                         <div class="product-title">Mop Giratório 360º com Balde Inox</div>
-                        <div class="product-price">R$ 71,25</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRPLuxcbP" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Abajur Mesa com Sensor Touch</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+                    </div>
+                </a>
+                <a href="https://s.shopee.com.br/AAE066MjJE" class="product-card" data-category="casa">
+                    <div class="product-code">#001</div>
+                    <div class="product-info">
+                        <div class="product-title">Kit de Potes Herméticos Organizadores</div>
+                        <div class="check-price">VER PREÇO ATUAL 🏷️</div>
                     </div>
                 </a>
             </div>
@@ -175,8 +224,8 @@
             <div class="faq-a">Basta clicar no produto desejado. Você será direcionado para o site oficial da Shopee.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q">Onde encontro o código do vídeo?</div>
-            <div class="faq-a">O código (#001, #002...) aparece no vídeo do Shorts. Use a barra de pesquisa acima.</div>
+            <div class="faq-q">Por que não tem preço no site?</div>
+            <div class="faq-a">Os preços da Shopee mudam diariamente. Clique no botão para ver o valor atualizado e os cupons do dia!</div>
         </div>
     </div>
 
@@ -185,7 +234,7 @@
             <a href="https://youtube.com/@clickpoupe-achadinhos" class="social-btn">YouTube</a>
             <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="social-btn">WhatsApp</a>
         </div>
-        <p class="disclaimer">Como afiliado Shopee, posso receber comissão por compras qualificadas.</p>
+        <p class="disclaimer">Como afiliado Shopee, posso receber comissão por compras qualificadas. Os preços podem variar conforme as lojas.</p>
         <p class="copy">&copy; 2026 ClickPoupe • lsproducoes</p>
     </footer>
 
