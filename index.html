@@ -24,19 +24,22 @@
         .logo { background-color: var(--deep-navy); color: var(--white); padding: 12px 25px; border-radius: 50px; display: inline-block; font-weight: 800; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid var(--primary-orange); text-transform: uppercase; }
         .logo span { color: var(--primary-orange); }
 
+        .tagline { margin-top: 10px; font-size: 0.85rem; font-weight: 600; color: var(--text-gray); }
+
         .search-container { width: 100%; max-width: 500px; margin-bottom: 20px; }
-        #searchInput { width: 100%; padding: 15px 20px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; outline: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        #searchInput { width: 100%; padding: 15px 20px; border-radius: 15px; border: 2px solid #ddd; font-size: 1rem; outline: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: 0.2s; }
         #searchInput:focus { border-color: var(--primary-orange); }
 
-        .main-link { width: 100%; max-width: 500px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 800; font-size: 1.05rem; animation: pulse 2s infinite; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px; }
+        .main-link { width: 100%; max-width: 500px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 800; font-size: 1.05rem; animation: pulse 2s infinite; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3); }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
 
         .category-grid { width: 100%; max-width: 500px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
-        .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 12px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
-        .cat-btn.active { background: var(--deep-navy); color: white; border-color: var(--deep-navy); }
+        .cat-btn { background: white; border: 1px solid #ddd; padding: 8px 14px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; cursor: pointer; transition: 0.2s; color: var(--deep-navy); }
+        .cat-btn.active, .cat-btn:hover { background: var(--deep-navy); color: white; border-color: var(--deep-navy); }
 
         .video-group { width: 100%; max-width: 500px; margin-bottom: 15px; }
-        .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .video-header { width: 100%; background: white; border: 1px solid #eee; padding: 16px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 800; font-size: 0.85rem; color: var(--primary-orange); text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: 0.2s; }
+        .video-header:hover { border-color: var(--primary-orange); }
         .video-header .arrow { font-size: 1.2rem; transition: 0.3s; }
         .video-content { display: none; flex-direction: column; gap: 10px; padding: 10px 0; padding-left: 10px; border-left: 3px solid var(--primary-orange); margin-top: 5px; }
 
@@ -44,9 +47,9 @@
         .video-group.active .arrow { transform: rotate(180deg); }
 
         .product-card { background: white; border-radius: 18px; display: flex; align-items: center; padding: 12px; text-decoration: none; color: var(--deep-navy); border: 1px solid #eee; transition: 0.2s; box-shadow: 0 3px 10px rgba(0,0,0,0.02); }
-        .product-card:hover { border-color: var(--primary-orange); transform: translateY(-2px); }
+        .product-card:hover { border-color: var(--primary-orange); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 69, 0, 0.1); }
 
-        .product-code { background: var(--primary-orange); color: white; font-weight: 800; font-size: 0.7rem; padding: 5px 8px; border-radius: 8px; margin-right: 12px; min-width: 50px; text-align: center; }
+        .product-code { background: var(--primary-orange); color: white; font-weight: 800; font-size: 0.7rem; padding: 6px 10px; border-radius: 8px; margin-right: 12px; min-width: 52px; text-align: center; }
         .product-info { flex: 1; }
         .product-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; line-height: 1.2; }
         .check-price { color: var(--primary-orange); font-weight: 800; font-size: 0.8rem; background: rgba(255, 69, 0, 0.1); padding: 5px 10px; border-radius: 8px; display: inline-block; text-transform: uppercase; }
@@ -54,7 +57,7 @@
         footer { margin-top: 40px; text-align: center; padding-bottom: 40px; width: 100%; max-width: 500px; }
         .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
         .social-btn { text-decoration: none; font-weight: 700; font-size: 0.8rem; color: var(--deep-navy); background: #eee; padding: 8px 15px; border-radius: 10px; }
-        .disclaimer { font-size: 0.65rem; color: #999; margin-top: 20px; line-height: 1.4; }
+        .disclaimer { font-size: 0.7rem; color: #999; margin-top: 20px; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -65,7 +68,7 @@
     </header>
 
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Busque por nome ou código (#005)...">
+        <input type="text" id="searchInput" placeholder="Busque por nome ou código (ex: #008)...">
     </div>
 
     <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="main-link">
@@ -74,6 +77,8 @@
 
     <div class="category-grid">
         <button class="cat-btn active" onclick="filterCategory('todos')">Todos</button>
+        <button class="cat-btn" onclick="filterCategory('inverno')">Inverno ❄️</button>
+        <button class="cat-btn" onclick="filterCategory('alien')">Não é deste planeta 👽</button>
         <button class="cat-btn" onclick="filterCategory('casa')">Casa</button>
         <button class="cat-btn" onclick="filterCategory('cozinha')">Cozinha</button>
         <button class="cat-btn" onclick="filterCategory('eletronicos')">Eletrônicos</button>
@@ -82,54 +87,131 @@
     </div>
 
     <div class="links-container" id="productGrid">
-        <div id="noResults">Nenhum achadinho encontrado... 😅</div>
+        <div id="noResults" style="display:none; text-align:center; padding:20px; font-weight:700; color:#888;">Nenhum achadinho encontrado... 😅</div>
 
-<!-- GRUPO VÍDEO #006 - ILUMINAÇÃO MÁGICA -->
-<div class="video-group" id="group-006">
-    <div class="video-header" onclick="toggleVideo('group-006')">
-        <span>💡 Vídeo #006 - Iluminação e Estética</span>
-        <span class="arrow">▾</span>
-    </div>
-    <div class="video-content">
-        <a href="https://s.shopee.com.br/5L8nGrIZ2u" class="product-card" data-category="casa">
-            <div class="product-code">#006</div>
-            <div class="product-info">
-                <div class="product-title">Luminária de Cristal Rose (16 Cores + Touch)</div>
-                <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+        <!-- GRUPO VÍDEO #008 - NOVA COLEÇÃO (14 PRODUTOS) -->
+        <div class="video-group active" id="group-008">
+            <div class="video-header" onclick="toggleVideo('group-008')">
+                <span>📦 Vídeo #008 - Especial de Inverno e Utilidades</span>
+                <span class="arrow">▾</span>
             </div>
-        </a>
-        <a href="https://s.shopee.com.br/2Voc0LKik1" class="product-card" data-category="eletronicos">
-            <div class="product-code">#006</div>
-            <div class="product-info">
-                <div class="product-title">Fita de LED Mangueira Neon Flexível (5m)</div>
-                <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/6feGqpNAIm" class="product-card" data-category="inverno">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit 6 Meias de Inverno Térmica Masculina Feminina Super Quente Confortável</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/8V5v29YNSO" class="product-card" data-category="cozinha">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Chaleira Elétrica Térmica Bule Com Tampa Inox 1,8L</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/6VKqePnFCV" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit 4 Rolos de Sacos de Lixo 10L – 160 Unidades | Neutraliza Odores | Pia e Banheiro</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/8pilQcOVUc" class="product-card" data-category="inverno">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Calça Pantalona Feminina Inverno de Lanzinha Com Bolso</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/6VKqeBNpHc" class="product-card" data-category="inverno">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit 3pc Blusa Gola Alta Tricot Feminina Inverno Manga Longa</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRYHLZStf" class="product-card" data-category="inverno">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit 2 Calças Legging Lisa Fitness Feminina Suplex Envio Rápido Moda LLevo</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/9ALbov07Cy" class="product-card" data-category="geek">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit Álbum Copa Do Mundo FIFA 2026 Brochura + Figurinhas Colecionáveis Originais</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/3LNosB0jA8" class="product-card" data-category="inverno">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Meia-Calça Térmica Feminina Plus Size Forrada Peluciada Translúcida de Lã</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/4AwvrZwf7G" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Creme Gel Regenerador Facial Gota de Colágeno Kokeshi 45g</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/9fHsPeGXAb" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit 3 Unidades Sabonete Líquido Chá Branco 500 ml</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/7fWo1vcHbJ" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit Coala Home Chá Branco</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/3LNorr7qNt" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Mulheres com Deus - 365 Dias de Fé - Devocional</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/30kyTC6t6t" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Kit Dupla Renovadores Faciais Kokeshi Pele Porcelana Olhos Gueixa</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/9Kf20lBTEp" class="product-card" data-category="casa">
+                    <div class="product-code">#008</div>
+                    <div class="product-info"><div class="product-title">Percarbonato 100% Puro Tira Manchas Roupas Brancas e Coloridas</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
             </div>
-        </a>
-        <a href="https://s.shopee.com.br/2qRSQ91WP1" class="product-card" data-category="casa">
-            <div class="product-code">#006</div>
-            <div class="product-info">
-                <div class="product-title">Luminária 3D Lousa Mágica (Escreva e Apague)</div>
-                <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+        </div>
+
+        <!-- GRUPO VÍDEO #007 - NÃO É DESTE PLANETA -->
+        <div class="video-group" id="group-007">
+            <div class="video-header" onclick="toggleVideo('group-007')">
+                <span>🛸 Vídeo #007 - Não é deste Planeta</span>
+                <span class="arrow">▾</span>
             </div>
-        </a>
-        <a href="https://s.shopee.com.br/4ft6d0wZZT" class="product-card" data-category="eletronicos">
-            <div class="product-code">#006</div>
-            <div class="product-info">
-                <div class="product-title">Luminária Água Viva LED RGB (Controle de Voz)</div>
-                <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/3g0cgeJMiP" class="product-card" data-category="alien">
+                    <div class="product-code">#007</div>
+                    <div class="product-info"><div class="product-title">Umidificador Antigravidade (Gotas Subindo)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/9UyPeA3lOM" class="product-card" data-category="alien">
+                    <div class="product-code">#007</div>
+                    <div class="product-info"><div class="product-title">Globo Mágico de Plasma USB de Mesa</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/20sOjA7VFR" class="product-card" data-category="alien">
+                    <div class="product-code">#007</div>
+                    <div class="product-info"><div class="product-title">Barra de LED Rítmica RGB Gamer (Áudio)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRVizNSRo" class="product-card" data-category="alien">
+                    <div class="product-code">#007</div>
+                    <div class="product-info"><div class="product-title">Bola Voadora Boomerang UFO LED Colorido</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
             </div>
-        </a>
-        <a href="https://s.shopee.com.br/7fWiDOlKxB" class="product-card" data-category="casa">
-            <div class="product-code">#006</div>
-            <div class="product-info">
-                <div class="product-title">Luminária Árvore de Natal com Folhas Douradas</div>
-                <div class="check-price">VER PREÇO ATUAL 🏷️</div>
+        </div>
+
+        <!-- GRUPO VÍDEO #006 - ILUMINAÇÃO MÁGICA -->
+        <div class="video-group" id="group-006">
+            <div class="video-header" onclick="toggleVideo('group-006')">
+                <span>💡 Vídeo #006 - Iluminação e Estética</span>
+                <span class="arrow">▾</span>
             </div>
-        </a>
-    </div>
-</div>
-        
-        <!-- GRUPO VÍDEO #005 - UTILIDADES ÚTEIS -->
+            <div class="video-content">
+                <a href="https://s.shopee.com.br/5L8nGrIZ2u" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#006</div>
+                    <div class="product-info"><div class="product-title">Luminária de Cristal Rose (16 Cores + Touch)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/2Voc0LKik1" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#006</div>
+                    <div class="product-info"><div class="product-title">Fita de LED Mangueira Neon Flexível (5m)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/2qRSQ91WP1" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#006</div>
+                    <div class="product-info"><div class="product-title">Luminária 3D Lousa Mágica USB</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/4ft6d0wZZT" class="product-card" data-category="eletronicos">
+                    <div class="product-code">#006</div>
+                    <div class="product-info"><div class="product-title">Luminária Água Viva LED RGB (Controle de Voz)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+                <a href="https://s.shopee.com.br/7fWiDOlKxB" class="product-card" data-category="casa">
+                    <div class="product-code">#006</div>
+                    <div class="product-info"><div class="product-title">Luminária Árvore de Natal Folhas Douradas</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GRUPO VÍDEO #005 - UTILIDADES INACREDITÁVEIS -->
         <div class="video-group" id="group-005">
             <div class="video-header" onclick="toggleVideo('group-005')">
                 <span>🏠 Vídeo #005 - Utilidades Inacreditáveis</span>
@@ -223,8 +305,8 @@
                     <div class="product-info"><div class="product-title">Cabo Lightning MFi (Lufa-Lufa - Amarelo)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
                 </a>
                 <a href="https://s.shopee.com.br/9024Sz6iE9" class="product-card" data-category="geek">
-                    <div class="product-code" >#004</div>
-                    <div class="product-info" ><div class="product-title" >Cabo Lightning MFi (Hogwarts - Preto)</div><div class="check-price" >VER PREÇO ATUAL 🏷️</div></div>
+                    <div class="product-code">#004</div>
+                    <div class="product-info"><div class="product-title">Cabo Lightning MFi (Hogwarts - Preto)</div><div class="check-price">VER PREÇO ATUAL 🏷️</div></div>
                 </a>
             </div>
         </div>
@@ -312,6 +394,16 @@
         </div>
 
     </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://whatsapp.com/channel/0029VbD1dqZHQbS9D53MRi41" class="social-btn">WhatsApp VIP</a>
+            <a href="#" class="social-btn">YouTube</a>
+            <a href="#" class="social-btn">TikTok</a>
+        </div>
+        <p class="disclaimer">Os preços e estoques dos produtos podem sofrer alterações sem aviso prévio. O ClickPoupe atua como divulgador afiliado oficial.</p>
+        <p class="disclaimer" style="margin-top:5px; font-weight:700;">&copy; 2026 ClickPoupe • lsproducoes</p>
+    </footer>
 
     <script>
         function toggleVideo(id) { document.getElementById(id).classList.toggle('active'); }
